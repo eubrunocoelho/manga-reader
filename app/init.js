@@ -17,7 +17,7 @@ let init = (chapterResponse) => {
             controller.Chapter.position = pageOption;
 
             let openPage = controller.Chapter.openPage();
-            
+
             $('#expand').setAttribute('href', openPage.pageImgFile);
             $('#imgFile').setAttribute('src', openPage.pageImgFile);
         });
@@ -25,6 +25,8 @@ let init = (chapterResponse) => {
     $('#previous')
         .addEventListener('click', () => {
             controller.previousPage();
+
+            controller.selected($('#selectPages'), controller.Chapter.position);
 
             let openPage = controller.Chapter.openPage();
 
@@ -35,6 +37,9 @@ let init = (chapterResponse) => {
     $('#next')
         .addEventListener('click', () => {
             controller.nextPage();
+
+            controller.selected($('#selectPages'), controller.Chapter.position);
+
             let openPage = controller.Chapter.openPage();
             $('#expand').setAttribute('href', openPage.pageImgFile);
             $('#imgFile').setAttribute('src', openPage.pageImgFile);

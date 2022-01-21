@@ -21,4 +21,8 @@ class Reader {
             return ++this.Chapter.position;
         }
     }
+
+    selected(element, value) {
+        element.selectedIndex = value;
+    }
 }
