@@ -200,14 +200,6 @@ nav {
 }
 
 @media screen and (max-width: 484px) {
-    header section {
-        width: 100%;
-    }
-
-    main section {
-        width: 100%;
-    }
-
     .navigation {
         align-items: center;
         flex-direction: column;

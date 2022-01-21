@@ -1,0 +1,24 @@
+{
+    "chapter": [
+        {
+            "pageNumber": 1,
+            "pageImgFile": "chapter-pages/1.png"
+        },
+        {
+            "pageNumber": 2,
+            "pageImgFile": "chapter-pages/2.png"
+        },
+        {
+            "pageNumber": 3,
+            "pageImgFile": "chapter-pages/3.png"
+        },
+        {
+            "pageNumber": 4,
+            "pageImgFile": "chapter-pages/4.png"
+        },
+        {
+            "pageNumber": 5,
+            "pageImgFile": "chapter-pages/5.png"
+        }
+    ]
+}
