@@ -12,11 +12,11 @@ let init = (chapterResponse) => {
 
     $('body')
         .addEventListener('keydown', (event) => {
-            event.preventDefault();
-
             let key = event.keyCode;
 
             if (key == 37) {
+                event.preventDefault();
+
                 controller.previousPage();
 
                 controller.selected($('#selectPages'), controller.Chapter.position);
@@ -30,6 +30,8 @@ let init = (chapterResponse) => {
             }
 
             if (key == 39) {
+                event.preventDefault();
+                
                 controller.nextPage();
 
                 controller.selected($('#selectPages'), controller.Chapter.position);
