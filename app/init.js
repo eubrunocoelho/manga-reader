@@ -10,6 +10,39 @@ let init = (chapterResponse) => {
 
     $('#selectPages').innerHTML = controller.optionsTemplate;
 
+    $('body')
+        .addEventListener('keydown', (event) => {
+            event.preventDefault();
+
+            let key = event.keyCode;
+
+            if (key == 37) {
+                controller.previousPage();
+
+                controller.selected($('#selectPages'), controller.Chapter.position);
+
+                let openPage = controller.Chapter.openPage();
+
+                $('#expand').setAttribute('href', openPage.pageImgFile);
+                $('#imgFile').setAttribute('src', openPage.pageImgFile);
+
+                window.scrollTo(0, 0);
+            }
+
+            if (key == 39) {
+                controller.nextPage();
+
+                controller.selected($('#selectPages'), controller.Chapter.position);
+
+                let openPage = controller.Chapter.openPage();
+
+                $('#expand').setAttribute('href', openPage.pageImgFile);
+                $('#imgFile').setAttribute('src', openPage.pageImgFile);
+
+                window.scrollTo(0, 0);
+            }
+        });
+
     $('#imgFile')
         .addEventListener('click', () => {
             controller.nextPage();
@@ -64,36 +97,5 @@ let init = (chapterResponse) => {
             $('#imgFile').setAttribute('src', openPage.pageImgFile);
 
             window.scrollTo(0, 0);
-        });
-
-    $('body')
-        .addEventListener('keydown', (event) => {
-            let key = event.keyCode;
-
-            if (key == 37) {
-                controller.previousPage();
-
-                controller.selected($('#selectPages'), controller.Chapter.position);
-
-                let openPage = controller.Chapter.openPage();
-
-                $('#expand').setAttribute('href', openPage.pageImgFile);
-                $('#imgFile').setAttribute('src', openPage.pageImgFile);
-
-                window.scrollTo(0, 0);
-            }
-
-            if (key == 39) {
-                controller.nextPage();
-
-                controller.selected($('#selectPages'), controller.Chapter.position);
-
-                let openPage = controller.Chapter.openPage();
-
-                $('#expand').setAttribute('href', openPage.pageImgFile);
-                $('#imgFile').setAttribute('src', openPage.pageImgFile);
-
-                window.scrollTo(0, 0);
-            }
         });
 }

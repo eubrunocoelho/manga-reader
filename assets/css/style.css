@@ -116,19 +116,32 @@ main section {
 }
 
 .navigation {
-    margin: 43px auto 0;
+    margin: 44px auto 0;
     display: flex;
     justify-content: space-between;
 }
 
 .open-page {
-    margin: 20px auto 142px;
+    margin: 20px auto 0;
     display: flex;
     justify-content: center;
 }
 
 .open-page img {
     max-width: 100%;
+}
+
+.comments {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #131313;
+    background: #fff;
+    max-width: calc(100% - 32px);
+    margin: 122px auto 100px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
 }
 
 nav {
@@ -226,6 +239,11 @@ nav {
     .navigation {
         align-items: center;
         flex-direction: column;
+    }
+
+    .comments {
+        min-width: calc(100% - 32px);
+
     }
 
     .current-chapter {

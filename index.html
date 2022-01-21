@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReaderJP - Leitor de mangás online pt-BR!</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.ico">
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +49,17 @@
         <section class="open-page">
             <img id="imgFile" />
         </section>
+        <section class="comments" id="disqus_thread">
+        </section>
     </main>
+    <script>
+        (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://readerjp.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
     <script src="app/ui/view/Options.js"></script>
     <script src="app/domain/Chapter.js"></script>
     <script src="app/controller/Reader.js"></script>
