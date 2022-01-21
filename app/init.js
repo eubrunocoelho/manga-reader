@@ -10,6 +10,20 @@ let init = (chapterResponse) => {
 
     $('#selectPages').innerHTML = controller.optionsTemplate;
 
+    $('#imgFile')
+        .addEventListener('click', () => {
+            controller.nextPage();
+
+            controller.selected($('#selectPages'), controller.Chapter.position);
+
+            let openPage = controller.Chapter.openPage();
+
+            $('#expand').setAttribute('href', openPage.pageImgFile);
+            $('#imgFile').setAttribute('src', openPage.pageImgFile);
+
+            window.scrollTo(0, 0);
+        });
+
     $('#selectPages')
         .addEventListener('change', () => {
             pageOption = $('#selectPages').value;
@@ -20,6 +34,8 @@ let init = (chapterResponse) => {
 
             $('#expand').setAttribute('href', openPage.pageImgFile);
             $('#imgFile').setAttribute('src', openPage.pageImgFile);
+
+            window.scrollTo(0, 0);
         });
 
     $('#previous')
@@ -32,6 +48,8 @@ let init = (chapterResponse) => {
 
             $('#expand').setAttribute('href', openPage.pageImgFile);
             $('#imgFile').setAttribute('src', openPage.pageImgFile);
+
+            window.scrollTo(0, 0);
         });
 
     $('#next')
@@ -41,7 +59,41 @@ let init = (chapterResponse) => {
             controller.selected($('#selectPages'), controller.Chapter.position);
 
             let openPage = controller.Chapter.openPage();
+
             $('#expand').setAttribute('href', openPage.pageImgFile);
             $('#imgFile').setAttribute('src', openPage.pageImgFile);
+
+            window.scrollTo(0, 0);
+        });
+
+    $('body')
+        .addEventListener('keydown', (event) => {
+            let key = event.keyCode;
+
+            if (key == 37) {
+                controller.previousPage();
+
+                controller.selected($('#selectPages'), controller.Chapter.position);
+
+                let openPage = controller.Chapter.openPage();
+
+                $('#expand').setAttribute('href', openPage.pageImgFile);
+                $('#imgFile').setAttribute('src', openPage.pageImgFile);
+
+                window.scrollTo(0, 0);
+            }
+
+            if (key == 39) {
+                controller.nextPage();
+
+                controller.selected($('#selectPages'), controller.Chapter.position);
+
+                let openPage = controller.Chapter.openPage();
+
+                $('#expand').setAttribute('href', openPage.pageImgFile);
+                $('#imgFile').setAttribute('src', openPage.pageImgFile);
+
+                window.scrollTo(0, 0);
+            }
         });
 }
