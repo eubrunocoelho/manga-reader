@@ -6,7 +6,8 @@ class Reader {
         this.Chapter.position = 0;
         this.Chapter.currentChapter = this.currentChapter.chapter;
 
-        this.Options = new Options(this.Chapter.currentChapter);
+        this.Options = new Options();
+        this.optionsTemplate = this.Options.optionsTemplate(this.Chapter.currentChapter);
     }
 
     previousPage() {
