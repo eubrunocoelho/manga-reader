@@ -37,14 +37,29 @@ body {
 
 /**
  * =================================================================================
+ * CONTAINER
+ * =================================================================================
+ */
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/**
+ * =================================================================================
  * HEADER
  * =================================================================================
  */
 
 .header {
-    align-items: center;
     background: var(--black-secondary-color);
     border-bottom: 5px solid var(--blue-primary-color);
+}
+
+.header__wrapper {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,4 +121,37 @@ body {
 
 .breadcrumbs__active {
     color: var(--text-default-color);
+}
+
+/**
+ * =================================================================================
+ * MEDIA QUERIES - MOBILE FIRST
+ * =================================================================================
+ */
+
+@media screen and (min-width: 482px) {
+    .header__wrapper {
+        flex-direction: row;
+        justify-content: start;
+        padding: 15px 10px 15px 10px;
+    }
+
+    .header__logo-box {
+        margin: 0 18px 0 0;
+    }
+
+    .header__details {
+        align-items: start;
+        text-align: start;
+    }
+
+    .details__breadcrumbs {
+        text-align: start;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .header__wrapper {
+        padding: 15px 20px 15px 20px;
+    }
 }
