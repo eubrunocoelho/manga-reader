@@ -9,7 +9,8 @@
     --black-primary-color: #080808;
     --black-secondary-color: #141415;
     --blue-primary-color: #0aabfb;
-    --red-color: #eb282d;
+    --red-rgb-color: rgba(235, 40, 45, 1);
+    --red-rbg-color-hover: rgba(235, 40, 45, .8);
     --disabled-color: #38383e;
     --border-default-radius: 6px;
     --text-default-color: #fff;
@@ -43,7 +44,11 @@ body {
  */
 
 .bg--red {
-    background: var(--red-color) !important;
+    background: var(--red-rgb-color) !important;
+}
+
+.bg--red:hover {
+    background: var(--red-rbg-color-hover) !important;
 }
 
 /**
