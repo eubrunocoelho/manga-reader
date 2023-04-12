@@ -75,6 +75,18 @@ body {
     width: 160px !important;
 }
 
+.mb--20 {
+    margin-bottom: 20px !important;
+}
+
+.mb--130 {
+    margin-bottom: 130px !important;
+}
+
+.mw--100vw-fix {
+    max-width: calc(100vw - 24px) !important;
+}
+
 /**
  * =================================================================================
  * COMPONENTS
@@ -229,6 +241,17 @@ body {
 .navigation__page {
     display: flex;
     gap: 12px;
+}
+
+/**
+ * =================================================================================
+ * SECTION OPEN-PAGE
+ * =================================================================================
+ */
+
+.section__open-page {
+    display: flex;
+    justify-content: center;
 }
 
 /**
