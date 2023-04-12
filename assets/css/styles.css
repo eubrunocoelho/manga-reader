@@ -9,6 +9,7 @@
     --black-primary-color: #080808;
     --black-secondary-color: #141415;
     --blue-primary-color: #0aabfb;
+    --red-color: #eb282d;
     --disabled-color: #38383e;
     --border-default-radius: 6px;
     --text-default-color: #fff;
@@ -37,6 +38,35 @@ body {
 
 /**
  * =================================================================================
+ * MODIFIERS
+ * =================================================================================
+ */
+
+.bg--red {
+    background: var(--red-color) !important;
+}
+
+/**
+ * =================================================================================
+ * COMPONENTS
+ * =================================================================================
+ */
+
+.button-box {
+    align-items: center;
+    border: 1px solid var(--black-primary-color);
+    border-radius: var(--border-default-radius);
+    color: var(--black-primary-color);
+    display: flex;
+    font-size: 22px;
+    height: 42px;
+    justify-content: center;
+    text-decoration: none;
+    width: 42px;
+}
+
+/**
+ * =================================================================================
  * CONTAINER
  * =================================================================================
  */
@@ -56,6 +86,7 @@ body {
 .header {
     background: var(--black-secondary-color);
     border-bottom: 5px solid var(--blue-primary-color);
+    margin: 0 0 40px 0;
 }
 
 .header__wrapper {
@@ -121,6 +152,44 @@ body {
 
 .breadcrumbs__active {
     color: var(--text-default-color);
+}
+
+/**
+ * =================================================================================
+ * MAIN
+ * =================================================================================
+ */
+
+.main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/**
+ * =================================================================================
+ * NAVIGATION - CHAPTER
+ * =================================================================================
+ */
+
+.navigation__chapter {
+    display: flex;
+    gap: 12px;
+}
+
+.chapter__select-box {
+    appearance: none;
+    background: var(--black-secondary-color);
+    border: 1px solid var(--black-primary-color);
+    border-radius: var(--border-default-radius);
+    color: var(--text-default-color);
+    font-family: var(--font-roboto-condensed);
+    font-size: 15px;
+    font-weight: 400;
+    height: 42px;
+    outline: none;
+    padding: 0 18px 0 18px;
+    width: 160px;
 }
 
 /**
