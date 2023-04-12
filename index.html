@@ -17,7 +17,7 @@
     <header class="header">
         <div class="header__wrapper container">
             <div class="header__logo-box">
-                <h1 class="logo-box__img">mangaXP</h1>
+                <a href="#" class="logo-box__img">mangaXP</a>
             </div>
             <div class="header__details">
                 <h2 class="details__title">Super Hero Origin #1</h2>
@@ -26,18 +26,38 @@
         </div>
     </header>
     <main class="main">
-        <nav class="navigation__chapter">
-            <select class="chapter__select-box">
-                <option>Capítulo #1</option>
-                <option>Capítulo #2</option>
-                <option>Capítulo #3</option>
-                <option>Capítulo #4</option>
-                <option>Capítulo #5</option>
-            </select>
-            <a href="#" class="button-box bg--red">
-                <i class="fa-solid fa-circle-exclamation"></i>
-            </a>
-        </nav>
+        <section class="section__navigation container">
+            <nav class="navigation__chapter">
+                <select class="select-box w--160">
+                    <option>Capítulo #1</option>
+                    <option>Capítulo #2</option>
+                    <option>Capítulo #3</option>
+                    <option>Capítulo #4</option>
+                    <option>Capítulo #5</option>
+                </select>
+                <a href="#" class="button-box bg--red">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                </a>
+            </nav>
+            <nav class="navigation__page">
+                <a href="#" class="button-box bg--yellow">
+                    <i class="fa-solid fa-expand"></i>
+                </a>
+                <a href="#" class="button-box bg--blue">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </a>
+                <select class="select-box">
+                    <option>Página 1</option>
+                    <option>Página 2</option>
+                    <option>Página 3</option>
+                    <option>Página 4</option>
+                    <option>Página 5</option>
+                </select>
+                <a href="#" class="button-box bg--blue">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </nav>
+        </section>
     </main>
 </body>
 </html>
