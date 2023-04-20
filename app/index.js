@@ -1,5 +1,5 @@
-let init = (currentChapter) => {
-    let ReaderController = new Reader(currentChapter);
+let init = (chapter) => {
+    let ReaderController = new Reader(chapter);
 
     const
         previousButton = document.querySelector('#previous'),

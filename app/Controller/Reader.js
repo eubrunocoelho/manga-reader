@@ -1,5 +1,12 @@
 class Reader {
     constructor(chapter) {
-        console.log(chapter);
+        this.currentChapter = chapter;
+        this.chapterPages = chapter.pages;
+
+        this.testing();
+    }
+
+    testing() {
+        console.log(this.chapterPages);
     }
 }
