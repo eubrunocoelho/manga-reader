@@ -1,15 +1,19 @@
 let init = (chapter) => {
-    let ReaderController = new Reader(chapter);
+    const ReaderController = new Reader(chapter);
 
     const
         previousButton = document.querySelector('#previous'),
         nextButton = document.querySelector('#next');
 
     previousButton.addEventListener('click', () => {
-        console.log('previous');
+        ReaderController.previousPage();
+
+        console.log(ReaderController.openPage());
     });
 
     nextButton.addEventListener('click', () => {
-        console.log('next');
+        ReaderController.nextPage();
+
+        console.log(ReaderController.openPage());
     });
 }
