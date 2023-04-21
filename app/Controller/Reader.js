@@ -6,13 +6,15 @@ class Reader {
     }
 
     previousPage() {
-        if (this.position > 0){
-            return --this.position;}
+        if (this.position > 0) {
+            return --this.position;
+        }
     }
 
     nextPage() {
-        if (this.position < (this.numberPages - 1)){
-            return ++this.position;}
+        if (this.position < (this.numberPages - 1)) {
+            return ++this.position;
+        }
     }
 
     openPage() {
