@@ -9,4 +9,9 @@ class Render {
 
         return optionsPage;
     }
+
+    openPage(elements, chapterPage) {
+        elements.expandPage.setAttribute('href', chapterPage.pageImgFile);
+        elements.chapterPage.setAttribute('src', chapterPage.pageImgFile);
+    }
 }

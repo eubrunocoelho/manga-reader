@@ -9,16 +9,22 @@ let init = (chapter) => {
         optionsRender = RenderView.optionsPage(chapterPages, numberPages);
 
     const
-        expandPage = document.querySelector('#expand'),
         previousButton = document.querySelector('#previous'),
         nextButton = document.querySelector('#next'),
-        optionsPage = document.querySelector('#optionsPage'),
+        optionsPage = document.querySelector('#optionsPage');
+
+    let
+        expandPage = document.querySelector('#expand'),
         chapterPage = document.querySelector('#chapterPage');
 
     let openPage = ReaderController.openPage();
 
-    expandPage.setAttribute('href', openPage.pageImgFile);
-    chapterPage.setAttribute('src', openPage.pageImgFile);
+    const generateElements = {
+        expandPage: expandPage,
+        chapterPage: chapterPage
+    };
+
+    RenderView.openPage(generateElements, openPage);
 
     optionsPage.innerHTML = optionsRender;
 
@@ -30,8 +36,7 @@ let init = (chapter) => {
 
         let openPage = ReaderController.openPage();
 
-        expandPage.setAttribute('href', openPage.pageImgFile);
-        chapterPage.setAttribute('src', openPage.pageImgFile);
+        RenderView.openPage(generateElements, openPage);
     });
 
     optionsPage.addEventListener('change', (e) => {
@@ -43,8 +48,7 @@ let init = (chapter) => {
 
         let openPage = ReaderController.openPage();
 
-        expandPage.setAttribute('href', openPage.pageImgFile);
-        chapterPage.setAttribute('src', openPage.pageImgFile);
+        RenderView.openPage(generateElements, openPage);
     });
 
     previousButton.addEventListener('click', (e) => {
@@ -55,8 +59,7 @@ let init = (chapter) => {
 
         let openPage = ReaderController.openPage();
 
-        expandPage.setAttribute('href', openPage.pageImgFile);
-        chapterPage.setAttribute('src', openPage.pageImgFile);
+        RenderView.openPage(generateElements, openPage);
     });
 
     nextButton.addEventListener('click', (e) => {
@@ -67,7 +70,6 @@ let init = (chapter) => {
 
         let openPage = ReaderController.openPage();
 
-        expandPage.setAttribute('href', openPage.pageImgFile);
-        chapterPage.setAttribute('src', openPage.pageImgFile);
+        RenderView.openPage(generateElements, openPage);
     });
 }
