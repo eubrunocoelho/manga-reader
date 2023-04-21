@@ -25,8 +25,11 @@ let init = (chapter) => {
 
     optionsPage.innerHTML = optionsRender;
 
-    previousButton.addEventListener('click', () => {
+    previousButton.addEventListener('click', (e) => {
+        e.preventDefault();
+
         ReaderController.previousPage();
+        ReaderController.selectedPage(optionsPage, ReaderController.position);
 
         let openPage = ReaderController.openPage();
 
@@ -34,8 +37,11 @@ let init = (chapter) => {
         chapterPage.setAttribute('src', openPage.pageImgFile);
     });
 
-    nextButton.addEventListener('click', () => {
+    nextButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        
         ReaderController.nextPage();
+        ReaderController.selectedPage(optionsPage, ReaderController.position);
 
         let openPage = ReaderController.openPage();
 

@@ -28,4 +28,8 @@ class Reader {
     openPage() {
         return this.chapterPages[this.position];
     }
+
+    selectedPage(element, pagePosition) {
+        element.selectedIndex = pagePosition;
+    }
 }
