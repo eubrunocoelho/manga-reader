@@ -9,6 +9,7 @@ let init = (chapter) => {
         optionsRender = RenderView.optionsPage(chapterPages, numberPages);
 
     const
+        body = document.querySelector('body'),
         previousButton = document.querySelector('#previous'),
         nextButton = document.querySelector('#next'),
         optionsPage = document.querySelector('#optionsPage');
@@ -27,6 +28,32 @@ let init = (chapter) => {
     RenderView.openPage(generateElements, openPage);
 
     optionsPage.innerHTML = optionsRender;
+
+    body.addEventListener('keydown', (e) => {
+        let key = e.keyCode;
+
+        if (key == 37) {
+            e.preventDefault();
+    
+            ReaderController.previousPage();
+            ReaderController.selectedPage(optionsPage, ReaderController.position);
+    
+            let openPage = ReaderController.openPage();
+    
+            RenderView.openPage(generateElements, openPage);
+        }
+
+        if (key == 39) {
+            e.preventDefault();
+
+            ReaderController.nextPage();
+            ReaderController.selectedPage(optionsPage, ReaderController.position);
+
+            let openPage = ReaderController.openPage();
+
+            RenderView.openPage(generateElements, openPage);
+        }
+    });
 
     chapterPage.addEventListener('click', (e) => {
         e.preventDefault();
