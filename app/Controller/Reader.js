@@ -9,7 +9,7 @@ class Reader {
         return this.chapterPages;
     }
 
-    get getNumberPages() { 
+    get getNumberPages() {
         return this.numberPages;
     }
 
@@ -33,3 +33,5 @@ class Reader {
         element.selectedIndex = pagePosition;
     }
 }
+
+export { Reader };

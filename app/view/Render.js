@@ -15,3 +15,5 @@ class Render {
         elements.chapterPage.setAttribute('src', chapterPage.pageImgFile);
     }
 }
+
+export { Render };
