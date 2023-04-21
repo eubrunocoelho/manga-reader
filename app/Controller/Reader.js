@@ -1,8 +1,16 @@
 class Reader {
     constructor(chapter) {
         this.chapterPages = chapter.pages;
-        this.numberPages = this.chapterPages.length;
+        this.numberPages = chapter.pages.length;
         this.position = 0;
+    }
+
+    get getChapterPages() {
+        return this.chapterPages;
+    }
+
+    get getNumberPages() { 
+        return this.numberPages;
     }
 
     previousPage() {
