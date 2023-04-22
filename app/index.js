@@ -1,11 +1,21 @@
 import { Chapter } from './Model/Chapter.js';
+import { Reader } from './Controller/Reader.js';
 
-const controlChapterReader = (URL) => {
+const chapterReader = (URL) => {
     const chapter = new Chapter(URL);
-    console.log(chapter.getChapter());
+    const currentChapter = chapter.getChapter();
+
+    (() => {
+        currentChapter.then((data) => { init(data) });
+    })();
+
+    let init = (chapter) => {
+        const ReaderController = new Reader(chapter);
+    }
 }
 
-controlChapterReader(chapterURL)
+chapterReader(chapterURL);
+
 // let init = (chapter) => {
 //     const
 //         ReaderController = new Reader(chapter),

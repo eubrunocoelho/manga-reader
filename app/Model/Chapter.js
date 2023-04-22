@@ -4,8 +4,12 @@ class Chapter {
     }
 
     async getChapter() {
-        const response = fetch(`${this.chapterURL}`).then((response) => {return response.json()});
-        return response;
+        let state = {};
+
+        const response = await fetch(`${chapterURL}`);
+        state = await response.json();
+        
+        return state;
     }
 }
 
