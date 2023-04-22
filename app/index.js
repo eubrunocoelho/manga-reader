@@ -26,6 +26,18 @@ const chapterReader = (URL) => {
         RenderView.openPage(elements, openPage);
         elements.optionsPage.innerHTML = optionsRender;
 
+        elements.optionsPage.addEventListener('change', (e) => { 
+            e.preventDefault();
+
+            let selectedPage = elements.optionsPage.value;
+
+            ReaderController.setPosition = selectedPage;
+            
+            let openPage = ReaderController.openPage();
+
+            RenderView.openPage(elements, openPage);
+        });
+
         elements.previousButton.addEventListener('click', (e) => {
             e.preventDefault();
 

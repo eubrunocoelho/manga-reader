@@ -13,6 +13,10 @@ class Reader {
         return this.numberPages;
     }
 
+    set setPosition(position) {
+        this.position = position;
+    }
+
     get getPosition() {
         return this.position;
     }
