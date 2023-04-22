@@ -22,9 +22,9 @@ const chapterReader = (URL) => {
 
         let openPage = ReaderController.openPage();
 
-
-        RenderView.openPage(elements, openPage);
         elements.optionsPage.innerHTML = optionsRender;
+        
+        RenderView.openPage(elements, openPage);
 
         elements.body.addEventListener('keydown', (e) => {
             let key = e.keyCode;
