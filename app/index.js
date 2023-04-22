@@ -1,5 +1,7 @@
 import { Chapter } from './Model/Chapter.js';
 import { Reader } from './Controller/Reader.js';
+import { Render } from './View/Render.js';
+import { elements } from './View/base.js';
 
 const chapterReader = (URL) => {
     const chapter = new Chapter(URL);
@@ -11,6 +13,18 @@ const chapterReader = (URL) => {
 
     let init = (chapter) => {
         const ReaderController = new Reader(chapter);
+        const RenderView = new Render();
+
+        let chapterPages = ReaderController.getChapterPages;
+        let numberPages = ReaderController.getNumberPages;
+
+        let optionsRender = RenderView.optionsPage(chapterPages, numberPages);
+
+        let openPage = ReaderController.openPage();
+
+
+        RenderView.openPage(elements, openPage);
+        elements.optionsPage.innerHTML = optionsRender;
     }
 }
 
