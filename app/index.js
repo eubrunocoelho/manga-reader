@@ -25,6 +25,28 @@ const chapterReader = (URL) => {
 
         RenderView.openPage(elements, openPage);
         elements.optionsPage.innerHTML = optionsRender;
+
+        elements.previousButton.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            ReaderController.previousPage();
+            ReaderController.selectedPage(elements.optionsPage, ReaderController.getPosition);
+
+            let openPage = ReaderController.openPage();
+
+            RenderView.openPage(elements, openPage);
+        });
+
+        elements.nextButton.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            ReaderController.nextPage();
+            ReaderController.selectedPage(elements.optionsPage, ReaderController.getPosition);
+
+            let openPage = ReaderController.openPage();
+
+            RenderView.openPage(elements, openPage);
+        });
     }
 }
 

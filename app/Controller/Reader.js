@@ -13,6 +13,10 @@ class Reader {
         return this.numberPages;
     }
 
+    get getPosition() {
+        return this.position;
+    }
+
     previousPage() {
         if (this.position > 0) {
             return --this.position;
